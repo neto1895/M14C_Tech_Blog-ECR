@@ -1,10 +1,22 @@
 [
     {
-        "title": "test one",
+        "user_id": 1,
+        "title": "test u1 one",
         "content": "this is a content example"
     },
     {
-        "title": "test two",
+        "user_id": 1,
+        "title": "test u1 two",
+        "content": "this is another content example"
+    },
+    {
+        "user_id": 2,
+        "title": "test u2 one",
+        "content": "this is a content example"
+    },
+    {
+        "user_id": 1,
+        "title": "test u2 two",
         "content": "this is another content example"
     }
 ]
