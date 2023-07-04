@@ -1,0 +1,55 @@
+<div>
+    <h1>Your Dashboard</h1>
+</div>
+
+<div class="card">
+  <div class="card-header" >
+    <h5>Post title</h5> 
+    <p>posted by ...</p>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Content of post. Content of post. Content of post. Content of post. Content of post.</p>
+  </div>
+  <div class="card-header"></div>
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createNewPost">
+  + New Post
+</button>
+</div>
+
+
+
+{{!-- test modal --}}
+
+
+<!-- Modal -->
+<div class="modal fade" id="createNewPost" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Create a new post</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-floating mb-3">
+            <input type="title" class="form-control" id="titleNewPost" >
+            <label for="floatingInput">New title</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="contentNewPost" >
+            <label for="floatingInput">Write your ideas</label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- end test modal --}}
+
+
+<script src="./js/dashboard.js"></script>
+
