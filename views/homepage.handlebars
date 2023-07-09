@@ -1,3 +1,6 @@
+
+
+
 <!-- Loop over each object in the projects array -->
 {{#each projects as |project| }}
 <div class="row mb-4 project">
@@ -24,35 +27,26 @@
 {{/each}}
 
 
-<div class="card">
-  <div class="card-header" >
-    <h5>Post title</h5> 
-    <p>posted by ...</p>
-  </div>
-  <div class="card-body">
-    <p class="card-text">Content of post. Content of post. Content of post. Content of post. Content of post.</p>
-  </div>
-  <div class="card-header"></div>
-</div>
+
+{{!-- test for the blogpost display --}}
+{{#each blogposts as |blogpost| }}
 
 <div class="card">
-  <div class="card-header" >
-    <h5>Post title</h5> 
-    <p>posted by ...</p>
+  <div class="card-header" onclick="redirectToBlogPost('{{blogpost.id}}')"  href="/blogpost/{{blogpost.id}}" role="button">
+    <h5>{{blogpost.title}}
+    </h5> 
+    <p>posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}} </p>
   </div>
   <div class="card-body">
-    <p class="card-text">Content of post. Content of post. Content of post. Content of post. Content of post.</p>
+    <p class="card-text"> {{blogpost.content}} </p>
   </div>
   <div class="card-header"></div>
 </div>
+{{/each}}
 
-<div class="card">
-  <div class="card-header" >
-    <h5>Post title</h5> 
-    <p>posted by ...</p>
-  </div>
-  <div class="card-body">
-    <p class="card-text">Content of post. Content of post. Content of post. Content of post. Content of post.</p>
-  </div>
-  <div class="card-header"></div>
-</div>
+
+<script>
+  function redirectToBlogPost(blogpostId) {
+    window.location.href = `/blogpost/${blogpostId}`;
+  }
+</script>

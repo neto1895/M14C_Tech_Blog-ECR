@@ -2,6 +2,27 @@
     <h1>Your Dashboard</h1>
 </div>
 
+
+{{!-- test for the blogpost display --}}
+{{#each blogposts as |blogpost| }}
+
+<div class="card">
+  <div class="card-header" onclick="redirectToBlogPost('{{blogpost.id}}')"  href="/blogpost/{{blogpost.id}}" role="button">
+    <h5>{{blogpost.title}}
+    </h5> 
+    <p>posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}} </p>
+  </div>
+  <div class="card-body">
+    <p class="card-text"> {{blogpost.content}} </p>
+  </div>
+  <div class="card-header"></div>
+</div>
+{{/each}}
+
+
+
+
+
 <div class="card">
   <div class="card-header" >
     <h5>Post title</h5> 
@@ -46,5 +67,22 @@
 {{!-- end test modal --}}
 
 
-<script src="./js/dashboard.js"></script>
+ {{#if blogposts.length}}
+  <div class="col-md-6 project-list">
+    <h3>Current Projects:</h3>
 
+    {{#each blogposts as |blogpost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/project/{{blogpost.id}}">{{blogpost.title}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

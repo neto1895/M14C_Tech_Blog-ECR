@@ -14,6 +14,14 @@
     {
         "user_id": 2,
         "content": "This is a lonely comment"
+    },
+    {
+        "user_id": 2,
+        "content": "This is a lonely comment but less lonely"
+    },
+    {
+        "user_id": 2,
+        "content": "This is (not) a lonely comment"
     }
 
 ]

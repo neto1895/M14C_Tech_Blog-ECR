@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Blogpost } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -13,13 +13,22 @@ router.get('/', async (req, res) => {
         },
       ],
     });
+    const blogpostData = await Blogpost.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
 
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
-
+    const blogposts = blogpostData.map((blogpost) => blogpost.get({plain: true})); 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      projects,
+      blogposts, 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -48,6 +57,30 @@ router.get('/project/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// New Path for Blogpost
+router.get('/blogpost/:id', async (req, res) =>{
+  try {
+    const blogpostData = await Blogpost.findByPk(req.params.id,{
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const blogpost = blogpostData.get({ palin:true});
+    res.render('blogpost', {
+      ...blogpost,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
@@ -84,8 +117,9 @@ router.get('/dashboard', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: Blogpost }],
     });
+    
 
     const user = userData.get({ plain: true });
 

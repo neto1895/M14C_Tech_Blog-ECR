@@ -1,6 +1,5 @@
 const User = require('./User');
 const Project = require('./Project');
-
 const Blogpost = require('./Blogpost');
 const Comment = require('./Comment');
 const PostComment = require('./PostComment');
@@ -34,7 +33,7 @@ Blogpost.hasMany(PostComment, {
 
 
 PostComment.belongsTo(Blogpost, {
-  foreignKey: 'blogpost'
+  foreignKey: 'blogpost_id'
 });
 PostComment.hasMany(Comment, {
   foreignKey: 'comment_id'
