@@ -59,28 +59,30 @@ router.get('/project/:id', async (req, res) => {
 });
 
 // New Path for Blogpost
-router.get('/blogpost/:id', async (req, res) =>{
+router.get('/blogpost/:id', async (req, res) => {
   try {
-    const blogpostData = await Blogpost.findByPk(req.params.id,{
+    const blogpostData = await Blogpost.findByPk(req.params.id, {
       include: [
         {
           model: User,
           attributes: ['name'],
         },
-
+        {
+          model: Comment,
+          include: [User],
+        },
       ],
     });
 
-    const blogpost = blogpostData.get({ plain:true});
+    const blogpost = blogpostData.get({ plain: true });
     res.render('blogpost', {
       ...blogpost,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
-
 
 
 // Use withAuth middleware to prevent access to route

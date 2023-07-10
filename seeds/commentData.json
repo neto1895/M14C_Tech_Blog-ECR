@@ -1,27 +1,33 @@
 [
     {
         "user_id": 1,
-        "content": "This is a comment wow"
+        "content": "This is a comment wow",
+        "blogpost_id": 1
     },
     {
         "user_id": 1,
-        "content": "This is another comment wow"
+        "content": "This is another comment wow",
+        "blogpost_id": 2
     },
     {
         "user_id": 1,
-        "content": "This is a very fine comment such wow"
+        "content": "This is a very fine comment such wow",
+        "blogpost_id": 1
     },
     {
         "user_id": 2,
-        "content": "This is a lonely comment"
+        "content": "This is a lonely comment",
+        "blogpost_id": 2
     },
     {
         "user_id": 2,
-        "content": "This is a lonely comment but less lonely"
+        "content": "This is a lonely comment but less lonely",
+        "blogpost_id": 1
     },
     {
         "user_id": 2,
-        "content": "This is (not) a lonely comment"
+        "content": "This is (not) a lonely comment",
+        "blogpost_id": 2
     }
 
 ]

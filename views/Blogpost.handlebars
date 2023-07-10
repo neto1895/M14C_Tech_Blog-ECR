@@ -1,12 +1,34 @@
 <p>test {{postComment.comment_id}} </p>
-<!-- Display the comments -->
-<h2>Comments:</h2>
-{{#each blogpost.comments}}
-  <div class="comment">
-    <p>Posted by {{user.name}}:</p>
-    <p>{{content}}</p>
-  </div>
-{{/each}}
+
+
+<h1>{{title}}</h1>
+<p>Written by: {{user.name}}</p>
+
+{{#if comments}}
+  <h2>Comments:</h2>
+  <ul>
+    {{#each comments}}
+      <li>
+        <p>{{content}}</p>
+        <p>Posted by: {{user.name}}</p>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No comments found.</p>
+{{/if}}
+
+{{#if logged_in}}
+  <!-- Render additional content for logged-in users -->
+{{else}}
+  <!-- Render content for non-logged-in users -->
+{{/if}}
+
+
+
+
+
+
 
 
 

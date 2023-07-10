@@ -19,33 +19,51 @@ User.hasMany(Blogpost, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
-User.hasMany(Comment, {
-  foreignKey: 'user_id',
-})
-
-
 Blogpost.belongsTo(User, {
   foreignKey: 'user_id'
 });
-Blogpost.hasMany(PostComment, {
-  foreignKey: 'blogpost_id'
-});
 
 
-PostComment.belongsTo(Blogpost, {
-  foreignKey: 'blogpost_id'
-});
-PostComment.hasMany(Comment, {
-  foreignKey: 'comment_id'
-});
-
-
-Comment.belongsTo(User, {
+User.hasMany(Comment, { 
   foreignKey: 'user_id'
 });
-Comment.belongsTo(PostComment, {
-  foreignKey: 'postComment_id'
+Comment.belongsTo(User, { 
+  foreignKey: 'user_id' 
 });
+
+
+Blogpost.hasMany(Comment, { 
+  foreignKey: 'blogpost_id' 
+});
+Comment.belongsTo(Blogpost, { 
+  foreignKey: 'blogpost_id' 
+});
+
+
+// User.hasMany(Comment, {
+//   foreignKey: 'user_id',
+// })
+
+
+// Blogpost.hasMany(PostComment, {
+//   foreignKey: 'blogpost_id'
+// });
+
+
+// PostComment.belongsTo(Blogpost, {
+//   foreignKey: 'blogpost_id'
+// });
+// PostComment.hasMany(Comment, {
+//   foreignKey: 'comment_id'
+// });
+
+
+// Comment.belongsTo(User, {
+//   foreignKey: 'user_id'
+// });
+// Comment.belongsTo(PostComment, {
+//   foreignKey: 'postComment_id'
+// });
 
 
 
