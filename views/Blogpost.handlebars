@@ -1,10 +1,23 @@
+<p>test {{postComment.comment_id}} </p>
+<!-- Display the comments -->
+<h2>Comments:</h2>
+{{#each blogpost.comments}}
+  <div class="comment">
+    <p>Posted by {{user.name}}:</p>
+    <p>{{content}}</p>
+  </div>
+{{/each}}
+
+
+
+
 <div class="card">
   <div class="card-header" >
-    <h5>Post title</h5> 
-    <p>posted by ...</p>
+    <h5>{{title}}</h5> 
+    <p>posted by {{user.name}} on {{format_date date_created}}</p>
   </div>
   <div class="card-body">
-    <p class="card-text">Content of post. Content of post. Content of post. Content of post. Content of post.</p>
+    <p class="card-text">{{content}}</p>
   </div>
   <div class="card-footer text-body-secondary" data-bs-toggle="collapse" href="#AddCommentSection" role="button" aria-expanded="false" aria-controls="collapseExample">
     Add Comment
@@ -35,3 +48,26 @@
     <p class="card-userDate">From  - Username - date -</p>
 </div>
 </div>
+
+{{#each blogposts as |blogpost| }}
+
+<div class="card">
+  <div class="card-header" onclick="redirectToBlogPost('{{blogpost.id}}')"  href="/blogpost/{{blogpost.id}}" role="button">
+    <h5>{{blogpost.title}}
+    </h5> 
+    <p>posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}} </p>
+  </div>
+  <div class="card-body">
+    <p class="card-text"> {{blogpost.content}} </p>
+  </div>
+  <div class="card-header"></div>
+</div>
+{{/each}}
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div class="subHandlebars">
     <header class="mainHeader">
       <h1>
@@ -19,19 +20,19 @@
 
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><a href="/">Home</a></button>
+         <a href="/">Home</a>
         </li>
 
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#dashboard-tab-pane" type="button" role="tab" aria-controls="dashboard-tab-pane" aria-selected="false"> <a href="/dashboard">Dashboard</a></button>
+          <a href="/dashboard">Dashboard</a>
         </li>
               {{#if logged_in}}
         <li class="nav-item" role="presentation">
-          <button href="/profile" id="logout" class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a href="/logout">Logout</a></button>        
+          <a id="logout" href="/">Logout</a>       
         </li>
               {{else}}
         <li class="nav-item" role="presentation">
-          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false"><a href="/login">login</a></button>        
+          <a href="/login">login</a>    
         </li>
               {{/if}}
       </ul>
@@ -51,8 +52,9 @@
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
-
 </body>
+
+
 
 </html>
 
