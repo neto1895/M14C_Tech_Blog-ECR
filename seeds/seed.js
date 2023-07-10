@@ -5,7 +5,7 @@ const userData = require('./userData.json');
 const projectData = require('./projectData.json');
 const blogpostData = require('./blogpostData.json');
 const commentData = require('./commentData.json');
-const postCommentData = require('./postCommentData.json');
+// const postCommentData = require('./postCommentData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -31,7 +31,7 @@ const seedDatabase = async () => {
 
 
   const comment = await Comment.bulkCreate(commentData);
-  const postComment = await PostComment.bulkCreate(postCommentData);
+  // const postComment = await PostComment.bulkCreate(postCommentData);
 
   process.exit(0);
 };
