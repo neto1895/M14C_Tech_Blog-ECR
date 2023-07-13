@@ -1,20 +1,27 @@
 // Async function to create a new comment
 const newCommentEntry = async (event) =>{
-    event.preventDefault();
-    console.log("test");
+
+    console.log("button working");
+
+    const currentURL = window.location.href;
+    const blogpost_id = parseInt(currentURL.match(/\d+$/)[0]);
+    console.log(blogpost_id); // Output: The last digit of the URL
 
     const content = document.querySelector('#newCommentContent').value.trim();
+    console.log(content);
 
-    if (content) {
+    console.log(JSON.stringify({ content, blogpost_id}));
+    if (content && blogpost_id) {
         const response = await fetch(`/api/comments`, {
             method: 'POST',
-            body: JSON.stringify({content}),
+            body: JSON.stringify({ content, blogpost_id}),
             headers: {
-                'ContentType': 'application/json',
+                'Content-Type': 'application/json',
             },
         });
         if (response.ok) {
-            window.location.reload();
+            console.log("response ok")
+            document.location.replace('/blogpost/'+blogpost_id);
         } else {
             alert('Failed to add new comment')
         }
@@ -22,8 +29,5 @@ const newCommentEntry = async (event) =>{
 }
 
 
-document
-  .querySelector('.newCommentForm')
-  .addEventListener('submit', newCommentEntry);
 
-  console.log("test 1");
+  console.log("JS path working");
