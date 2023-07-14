@@ -1,4 +1,14 @@
-
+const deleteBlogpost = async (blogpostId) => {
+  console.log(blogpostId);
+    const response = await fetch(`/api/blogposts/${blogpostId}`, {
+    method: 'DELETE',
+  });
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert('Failed to delete blogpost');
+  }
+};
 
 
 function redirectToBlogPost(blogpostId) {
