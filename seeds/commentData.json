@@ -1,33 +1,53 @@
 [
     {
-        "user_id": 1,
-        "content": "This is a comment wow",
+        "user_id": 2,
+        "content": "Great post, really informative!",
         "blogpost_id": 1
     },
     {
-        "user_id": 1,
-        "content": "This is another comment wow",
-        "blogpost_id": 2
-    },
-    {
-        "user_id": 1,
-        "content": "This is a very fine comment such wow",
+        "user_id": 3,
+        "content": "Thanks for sharing this valuable insight.",
         "blogpost_id": 1
     },
     {
         "user_id": 2,
-        "content": "This is a lonely comment",
+        "content": "I found this post incredibly helpful.",
         "blogpost_id": 2
     },
     {
-        "user_id": 2,
-        "content": "This is a lonely comment but less lonely",
-        "blogpost_id": 1
+        "user_id": 3,
+        "content": "This is exactly what I was looking for.",
+        "blogpost_id": 2
+    },
+    {
+        "user_id": 1,
+        "content": "Well written and easy to understand.",
+        "blogpost_id": 3
+    },
+    {
+        "user_id": 3,
+        "content": "I learned something new from this post.",
+        "blogpost_id": 3
+    },
+    {
+        "user_id": 1,
+        "content": "Fantastic explanation, thank you!",
+        "blogpost_id": 4
+    },
+    {
+        "user_id": 3,
+        "content": "Your expertise on this topic is evident.",
+        "blogpost_id": 4
+    },
+    {
+        "user_id": 1,
+        "content": "Appreciate the practical examples provided.",
+        "blogpost_id": 5
     },
     {
         "user_id": 2,
-        "content": "This is (not) a lonely comment",
-        "blogpost_id": 2
+        "content": "Looking forward to implementing these tips.",
+        "blogpost_id": 5
     }
 
 ]
