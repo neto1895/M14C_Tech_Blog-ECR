@@ -40,7 +40,9 @@ see video here: [Walkthrough video](https://drive.google.com/file/d/1tf3U3cTRwPU
 To install necessary dependencies, run the following command:
 
 > npm i
+
 > npm run seed
+
 >npm start
 
 <a name="usage"></a>
