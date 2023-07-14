@@ -3,7 +3,7 @@
     <h2>Welcome {{name}} </h2>
 </div>
 
-
+<div class="cardContainer">
 {{!-- test for the blogpost display --}}
 {{#each blogposts as |blogpost| }}
 
@@ -15,11 +15,13 @@
   </div>
   <div class="card-body">
     <p class="card-text"> {{blogpost.content}} </p>
+    <button class="deleteButton btn btn-danger">Delete post</button>
   </div>
   <div class="card-header"></div>
 </div>
 {{/each}}
 
+</div>
 
 
 

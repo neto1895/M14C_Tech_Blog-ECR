@@ -59,7 +59,7 @@ router.get('/project/:id', async (req, res) => {
 });
 
 // New Path for Blogpost
-router.get('/blogpost/:id', async (req, res) => {
+router.get('/blogpost/:id', withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.findByPk(req.params.id, {
       include: [

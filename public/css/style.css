@@ -68,6 +68,12 @@ background-color: #f1faee;
 .btn-secondary {
     line-height: 0.5;
 }
+.btn-danger {
+    color: white;
+    background-color: #da3030;
+    border-color: #962121;
+    line-height: 0.5;
+}
 
 
 
@@ -79,3 +85,7 @@ form, .form.login-form, .form-floating, .modal-body {
     background-color: #ffffff00;
 }
 
+  .cardContainer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
