@@ -41,4 +41,3 @@ Blogpost.init(
 );
 
 module.exports = Blogpost;
-  

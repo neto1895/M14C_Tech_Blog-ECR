@@ -26,8 +26,4 @@ const newCommentEntry = async (event) =>{
             alert('Failed to add new comment')
         }
     }
-}
-
-
-
-  console.log("JS path working");
+};

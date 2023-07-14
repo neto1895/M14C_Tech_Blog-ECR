@@ -10,7 +10,6 @@ const deleteBlogpost = async (blogpostId) => {
   }
 };
 
-
 function redirectToBlogPost(blogpostId) {
   window.location.href = `/blogpost/${blogpostId}`;
 }
@@ -36,7 +35,6 @@ const newBlogpostEntry = async (event) => {
     }
   }
 };
-
 
 document
   .querySelector('.new-blogpost-form')
