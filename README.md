@@ -25,13 +25,11 @@ A fullstack blog site CMS-style where developers can publish their blog posts an
 
 ## Walkthrough
 
+The following gif demonstrates the functionality of the application: 
 
-![mockup](./assets/images/mockup.png)
+![Mockupgif](./public/images/deployed.gif)
 
-
-The following video demonstrates the functionality of the application: 
-
-see video here: [Walkthrough video](https://drive.google.com/file/d/1tf3U3cTRwPUxOt2-epJAm3BYlVbURUdd/view)
+You can see the [deployed page here.](https://classique-mandarine-05607-7805819f20f7.herokuapp.com/)
 
 <a name="instalation"></a>
 
@@ -49,7 +47,8 @@ To install necessary dependencies, run the following command:
 
 ## Usage
 
-You can use the deployed page or clone the repository in your own computer, if so please follow the instalation process. 
+
+You can use the [deployed page](https://classique-mandarine-05607-7805819f20f7.herokuapp.com/) or clone the repository in your own computer, if so please follow the instalation process. 
 
 
 <a name="license"></a>
