@@ -7,10 +7,7 @@
 
 ## Description
 
-A back end for an e-commerce site. From a working Express.js API to configure it to use Sequelize to interact with a MySQL database.
-This project let the user GET, POST, PUT and delete data from the database. 
-
-A fullstack blog site CMS-style where developers can publish their blog posts and comment on other developers’ posts as well.
+A full-stack blog site CMS-style where developers can publish their blog posts and comment on other developers’ posts.
 
 ## Table of Contents
 - [ Walkthrough ](#walkthrough)
